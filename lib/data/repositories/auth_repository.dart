@@ -34,4 +34,9 @@ class AuthRepository implements AuthDatasource {
     if (!hasToken) return false;
     return await _remote.checkAuthStatus();
   }
+
+  @override
+  Future<String?> getToken() async {
+    return await _local.getToken();
+  }
 }
